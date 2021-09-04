@@ -9,7 +9,7 @@ class TrecwebCollection:
         # 1. Open the file in Path.DataWebDir.
         # 2. Make preparation for function nextDocument().
         # NT: you cannot load the whole corpus into memory!!
-        self.file = open(file, "r", encoding="utf-8")
+        self.file = open(file, "r", encoding="utf-8")    # Open file and keep file status in Class instance
         self.re_str = "(<(.*?)>)|(\\[(.*?)\\])|(\\&\\#?\\S+( ))|(( )\\S+>( ))"  # Regular expression used to remove html tags in content
 
     def nextDocument(self):
