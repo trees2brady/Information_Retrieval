@@ -1,0 +1,5 @@
+1.python version = 3.6.9
+2.Need to install nltp and run code below to install stemming package:
+	import nltk
+	nltk.download("popular")
+3.
