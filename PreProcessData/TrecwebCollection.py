@@ -36,6 +36,6 @@ class TrecwebCollection:
                 content += re.sub(self.re_str, " ", line_str).strip("\n")  # Replace html tags and \n with space
                 line_str = self.file.readline()
 
-
             return [docNo, content]
         self.file.close()
+        return None

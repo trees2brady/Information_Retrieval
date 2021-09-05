@@ -7,8 +7,12 @@ class StopWordRemover:
     def __init__(self, file=Path.StopwordDir):
         # Load and store the stop words from the fileinputstream with appropriate data structure.
         # NT: address of stopword.txt is Path.StopwordDir.
-        self.file = open(file, "r", encoding="utf-8")    # Open file and keep file status in Class instance
+        self.stop_words_dict = {}  # Use dictionary to store stopwords since it is fast to search
+        with open(file, "r", encoding="utf-8") as f:  # Open file put all stop words into dictionary
+            for line in f:
+                if self.stop_words_dict.get(line.strip("\n").strip()):
+                    self.stop_words_dict[line] = 1
 
     def isStopword(self, word):
         # Return true if the input word is a stopword, or false if not.
-        return False
+        return True if self.stop_words_dict.get(word) else False  # Return True if input word is in pre-stored dictionary
