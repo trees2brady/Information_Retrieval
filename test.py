@@ -11,7 +11,7 @@ import re
 # print(re.sub("<.*?>", " ", s))
 # nltk.download("popular")
 # d (for download)
-import re
+# import re
 # all (for download everything)
-l = "happyasd asd asd"
-print(re.findall("\w*", l))
+# l = "happyasd asd asd"
+# print(re.findall("\w*", l))
