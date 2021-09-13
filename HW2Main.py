@@ -7,6 +7,7 @@ import Classes.Path as Path
 import datetime
 from PreProcessData.PreProcessedCorpusReader import PreProcessedCorpusReader
 from MyIndexWriter import MyIndexWriter
+from MyIndexReader import MyIndexReader
 
 
 def WriteIndex(dataType):
@@ -25,5 +26,6 @@ def WriteIndex(dataType):
     output.close()
 
 
-def ReadIndex():
-    pass
+def ReadIndex(date_type, token):
+    index_reader = MyIndexReader()
+    df = index_reader.GetDocFreq(token)

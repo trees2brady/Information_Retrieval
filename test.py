@@ -15,3 +15,4 @@ import re
 # all (for download everything)
 # l = "happyasd asd asd"
 # print(re.findall("\w*", l))
+print([[0] * 3] * 2)

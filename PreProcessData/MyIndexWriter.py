@@ -1,5 +1,6 @@
 from Classes import Path
 
+
 class MyIndexWriter:
     def __init__(self, data_type):
         self.data_type = data_type
@@ -37,10 +38,33 @@ class MyIndexWriter:
 
     def block_to_disk(self):
         file = open("data//." + self.data_type + ".ridx" + self.block_id)
+        for key in self.raw_index.map_term.keys():
+            try:
+                file.write(str(key) + " ")
+                for i in range(len(self.raw_index.map_term[key])):
+                    file.write(str(self.raw_index.map_term[key][i][0]) + ":" + str(str(self.raw_index.map_term[key][i][1])) + ",")
+                    for j in range(len(self.raw_index.map_term[key][i])):
+                        string = ":" if j == len(self.raw_index.map_term[key][i]) - 1 else ";"
+                        file.write(str(self.raw_index.map_term[key][i][j]) + string)
+            except Exception as e:
+                print(e)
+        self.num_of_idx_in_block = 0
+        self.block_id += 1
+        file.close()
+        self.raw_index.clear()
 
+    def fuse(self):  # 需要根据下发的python主类看是否需要设置python缓冲
+        pass
+
+    def build_dic(self):
+        pass
 
     def close(self):
+        self.block_to_disk()
         self.file.close()
+        self.raw_index.clear()
+        self.fuse()
+        self.build_dic()
 
 
 class RawIndex:
