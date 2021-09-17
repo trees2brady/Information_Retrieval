@@ -49,7 +49,7 @@ def PreProcess(type):
         wr.write("\n")
         count += 1
         if count % 10000 == 0:
-            print("finish " + count + " docs")
+            print("finish " + str(count) + " docs")
     wr.close()
     return
 

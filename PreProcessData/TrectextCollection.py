@@ -41,3 +41,4 @@ class TrectextCollection:
 
             return [docNo, content]
         self.file.close()
+        return None

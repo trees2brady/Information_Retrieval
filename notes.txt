@@ -1,0 +1,8 @@
+1.python version = 3.6.9
+2.Need to install nltp and run code below to install stemming package:
+	import nltk
+	nltk.download("popular")
+3.OS:Ubuntu 18.0
+trectext: index text corpus running time:  0:57:52.268079
+
+trecweb:index text corpus running time:  0:26:12.255908
