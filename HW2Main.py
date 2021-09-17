@@ -29,3 +29,4 @@ def WriteIndex(dataType):
 def ReadIndex(date_type, token):
     index_reader = MyIndexReader()
     df = index_reader.GetDocFreq(token)
+    print("test")
