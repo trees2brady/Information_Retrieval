@@ -60,7 +60,7 @@ class MyIndexReader:
         if i_line is not None and i_line > 0:
             for i in range(i_line):
                 fis.readline()
-            pos = fis.readline().split("\\s")  #啥意思？可能是空格？
+            pos = fis.readline().split(" ")  #啥意思？可能是空格？
             fis.close()
             return pos[1]
         return None
